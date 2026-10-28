@@ -1,0 +1,129 @@
+{
+  "evaluation_kind": "fixed_synthetic_scenario_review",
+  "model_api_calls": 0,
+  "production_requests": 0,
+  "case_count": 3,
+  "scenario_results": [
+    {
+      "scenario_id": "unlinked-sequence",
+      "case_id": "SENTINEL-STRUCT-DEMO-001",
+      "title": "Two failures, then a pass",
+      "source_events": 3,
+      "passed": 1,
+      "failed": 2,
+      "replay_flags": 1,
+      "shared_opaque_identifiers": 0,
+      "review_queue_items": 3,
+      "minimum_review_priority": 2,
+      "human_review_required": true,
+      "automatic_adverse_action_allowed": false,
+      "export_consistency_checks_passed": 12,
+      "export_consistency_checks_total": 12,
+      "source_fact_result_preserved": true
+    },
+    {
+      "scenario_id": "shared-token",
+      "case_id": "SENTINEL-SHARED-TOKEN-002",
+      "title": "Explicit correlation, uncertain identity",
+      "source_events": 4,
+      "passed": 2,
+      "failed": 2,
+      "replay_flags": 1,
+      "shared_opaque_identifiers": 1,
+      "review_queue_items": 5,
+      "minimum_review_priority": 2,
+      "human_review_required": true,
+      "automatic_adverse_action_allowed": false,
+      "export_consistency_checks_passed": 12,
+      "export_consistency_checks_total": 12,
+      "source_fact_result_preserved": true
+    },
+    {
+      "scenario_id": "low-signal",
+      "case_id": "SENTINEL-LOW-SIGNAL-003",
+      "title": "Avoid false accusations",
+      "source_events": 3,
+      "passed": 3,
+      "failed": 0,
+      "replay_flags": 0,
+      "shared_opaque_identifiers": 0,
+      "review_queue_items": 3,
+      "minimum_review_priority": 5,
+      "human_review_required": true,
+      "automatic_adverse_action_allowed": false,
+      "export_consistency_checks_passed": 12,
+      "export_consistency_checks_total": 12,
+      "source_fact_result_preserved": true
+    }
+  ],
+  "assurance": {
+    "status": "pass",
+    "passed": 14,
+    "total": 14,
+    "checks": [
+      {
+        "name": "Reject duplicate event IDs",
+        "passed": true
+      },
+      {
+        "name": "Reject raw audio fields",
+        "passed": true
+      },
+      {
+        "name": "Reject malformed timestamps",
+        "passed": true
+      },
+      {
+        "name": "Reject false replay string",
+        "passed": true
+      },
+      {
+        "name": "Reject unapproved identifiers",
+        "passed": true
+      },
+      {
+        "name": "Reject non-synthetic classification",
+        "passed": true
+      },
+      {
+        "name": "Require human-review constraints",
+        "passed": true
+      },
+      {
+        "name": "Reject model-altered event timestamp",
+        "passed": true
+      },
+      {
+        "name": "Reject fabricated evidence field",
+        "passed": true
+      },
+      {
+        "name": "Reject confirmed fraud claim",
+        "passed": true
+      },
+      {
+        "name": "Reject automatic account block advice",
+        "passed": true
+      },
+      {
+        "name": "Detect changed exported source result",
+        "passed": true
+      },
+      {
+        "name": "Keep biometric result and human authority intact",
+        "passed": true
+      },
+      {
+        "name": "Multi-scenario linkage remains qualified",
+        "passed": true
+      }
+    ],
+    "policy_version": "sentinel-queue-1.2.0",
+    "scope": "Local fixed-fixture assertions; no live Meta evaluation, penetration testing, or production certification.",
+    "network_requests": 0,
+    "meta_api_requests": 0,
+    "production_requests": 0,
+    "limitations": "Passing does not ensure every possible prompt injection, ungrounded narrative, privacy failure or operational risk is prevented."
+  },
+  "interpretation": "These are known fixed synthetic fixtures, not accuracy, recall, precision, customer testing, red teaming or independent security certification. Human review is required."
+}

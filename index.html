@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>VoiceID Sentinel v1.6 | AI Investigation Assurance Workbench</title>
+  <link rel="stylesheet" href="/assets/app.css">
+  <script src="/assets/app.js" defer></script>
+</head>
+<body>
+<header class="header"><div class="wrap header-inner">
+ <div class="brand-lockup"><span class="mark" aria-hidden="true">W</span><div><strong>Weeglong AI™</strong><small>VOICEID SENTINEL / INVESTIGATIVE INTELLIGENCE</small></div></div>
+ <div class="header-right"><button class="type-size-btn" id="type-size-btn" type="button" aria-label="Use extra large dashboard text" aria-pressed="false">A+ Extra large text</button><span class="tag tag-positive">● Human review required</span><span class="micro-text">LOCAL · SYNTHETIC DEMO</span></div>
+</div></header>
+<main>
+<section class="wrap hero">
+ <div class="eyebrow">ENTERPRISE VOICE BIOMETRIC AND FORENSIC INTELLIGENCE PLATFORM</div>
+ <div class="hero-split"><div><h1>AI Investigation Workbench</h1><p class="subtitle">Evidence-led investigation support. Source decisions remain authoritative; Meta AI commentary is advisory and cannot override verification or determine fraud.</p></div><div class="hero-badge"><span>WORKBENCH RELEASE</span><strong>v1.6</strong><small>OFFLINE FIRST</small></div></div>
+ <div class="meta-line"><span id="case-label">CASE · LOADING</span><span id="mode-label">OFFLINE · SOURCE FACTS ONLY</span><span id="policy-label">POLICY · —</span></div>
+</section>
+<section class="wrap workspace">
+ <div class="workspace-top"><div><span class="overline">01 / INVESTIGATION CONTROLS</span><h2>Case workspace</h2><p class="muted">Load a synthetic case JSON, run the offline engine, or explicitly request Meta analysis.</p></div><span id="connect-pill" class="tag">Meta mode checking…</span></div>
+ <div class="controls"><button id="sample-btn" class="button button-subtle" type="button">↻ Load example case</button><label class="button button-subtle file-control" for="case-file">＋ Open synthetic JSON<input id="case-file" type="file" accept=".json,application/json"></label><button id="offline-btn" class="button button-cyan" type="button">Analyze offline</button><button id="preview-btn" class="button button-outline" type="button">Preview illustrative AI panel</button><button id="meta-btn" class="button button-gold" type="button" disabled>✦ Run LIVE Meta AI</button></div>
+ <div class="workspace-bottom"><span id="case-source" class="muted">Example synthetic case (3 events)</span><span id="activity-indicator" role="status" aria-live="polite">Initializing…</span></div>
+ <div id="error-msg" class="error-msg" role="alert" hidden></div>
+</section>
+<section class="wrap scenario-section" id="scenario-gallery" aria-label="Synthetic demonstration scenarios">
+ <div class="panel scenario-panel"><div class="panel-head"><div><span class="overline">DEMO GALLERY / THREE CONTRASTING CASES</span><h2>One engine. Three evidence stories.</h2><p class="muted">Select any fictional case to see how identical rules handle different evidence. None uses real bank records.</p></div><span class="section-tag">SYNTHETIC · OFFLINE</span></div>
+ <div id="scenario-cards" class="scenario-grid" role="group" aria-label="Choose a synthetic scenario"><p class="muted">Loading local examples…</p></div>
+ <p class="scenario-foot">The illustrative AI preview is limited to the original unlinked case. For other cases, use offline analysis or the optional explicitly confirmed live Meta request. An opaque token match is not proof of a human identity.</p>
+ </div>
+</section>
+<section class="wrap stats" aria-label="Source-derived investigation metrics">
+ <div class="stat cyan"><div id="stat-events" class="val">—</div><div class="lab">Source events</div></div>
+ <div class="stat"><div id="stat-pass" class="val">—</div><div class="lab">Passed verification</div></div>
+ <div class="stat"><div id="stat-fail" class="val">—</div><div class="lab">Failed verification</div></div>
+ <div class="stat gold"><div id="stat-replay" class="val">—</div><div class="lab">Replay flags for review</div></div>
+ <div class="stat"><div id="stat-links" class="val">—</div><div class="lab">Shared identifier signals</div></div>
+</section>
+<div class="wrap"><div class="notice"><strong>Investigation safeguard.</strong> Detector flags and failed verification are not proof of fraud, spoofing, or identity. Human review only. No automated adverse actions are permitted.</div></div>
+<section class="wrap columns">
+ <div class="panel" id="timeline-panel"><div class="panel-head"><div><span class="overline">02 / VERIFIED SOURCE</span><h2>Event timeline</h2><p class="muted">Chronological, source-derived observations</p></div><span class="section-tag">NOT MODEL-GENERATED</span></div><div id="timeline-list" class="timeline-list"></div></div>
+ <div class="panel" id="queue-panel"><div class="panel-head"><div><span class="overline">03 / REVIEW POLICY</span><h2>Investigation queue</h2><p class="muted">Deterministic priorities · never fraud scores</p></div><span class="section-tag">PYTHON POLICY</span></div><div id="queue-list"></div></div>
+</section>
+<section class="wrap executive-section"><div class="panel executive-panel" id="executive-panel"><div class="panel-head"><div><span class="overline">04 / SOURCE-BASED DECISION SUPPORT</span><h2>Executive investigation conclusion</h2><p class="muted">Generated by deterministic Python logic from the supplied metadata — not a Meta AI finding.</p></div><span class="section-tag">HUMAN REVIEW ONLY</span></div><p id="executive-summary" class="executive-copy">Analyzing source events…</p><div class="executive-foot">No fraud, spoofing, shared actor, or intent is established by detector flags or sequence alone.</div></div></section>
+<section class="wrap ai-section"><div class="panel ai-panel" id="ai-investigation-panel" tabindex="-1" role="region" aria-label="AI investigation results"><div class="panel-head"><div><span class="overline">05 / SEPARATE MODEL ADVISORY</span><h2>Meta AI · Investigation intelligence</h2><p class="muted">Structured, evidence-referenced narrative. It never modifies source facts or the deterministic queue.</p></div><span id="ai-chip" class="tag tag-neutral">NOT REQUESTED</span></div>
+  <div id="advisory-empty" class="empty-advisory"><div class="empty-icon">✦</div><h3>No AI advisory in this case</h3><p>This offline report uses only source facts. Select <strong>Preview illustrative AI panel</strong> for a clearly labeled mock-up, or enable and run Meta AI for a real API result.</p></div>
+  <div id="advisory-view" hidden><div id="ai-banner" class="advisory-banner"></div><div class="advisory-intro"><div class="overline">EVIDENCE-REFERENCED CASE SUMMARY · MODEL-GENERATED</div><p id="ai-summary"></p></div><div class="ai-columns"><div><h3>Observed patterns</h3><div id="ai-patterns"></div><h3>Relationship assessment</h3><div id="ai-relationships"></div></div><div><h3>Investigation hypotheses</h3><div id="ai-hypotheses"></div><h3>Privacy-first human review steps</h3><p class="privacy-intro">Approved demonstration guidance from local policy — not instructions from Meta AI. Review existing authorized metadata before considering any new collection.</p><div id="privacy-steps"></div><details class="model-gaps" id="model-gaps"><summary>▸ View original model-suggested gaps and next steps (unverified)</summary><p class="muted">Model proposals can mention sensitive evidence. They are preserved for audit only, not automatically authorized collection requests.</p><div id="ai-nextsteps"></div></details></div></div><p class="ai-limits">Model-generated commentary is not independently fact-checked in full. Evidence references are validated for existence; every conclusion requires human examination.</p></div>
+ </div></section>
+<section class="wrap audit-section"><div class="panel"><div class="panel-head"><div><span class="overline">06 / TRACEABLE RECORD</span><h2>Evidence integrity & audit</h2><p class="muted">SHA-256 fingerprints of canonical synthetic source metadata and dossier. Not a digital signature or attestation.</p></div><span class="section-tag">AUDIT FINGERPRINTS</span></div><div class="digest-grid"><div class="digest"><div class="small">VALIDATED DOSSIER SHA-256</div><code id="dossier-hash">—</code></div><div class="digest"><div class="small">ORIGINAL SYNTHETIC INPUT SHA-256</div><code id="input-hash">—</code></div></div><div class="audit-foot"><span id="audit-generated">Awaiting investigation</span><span id="audit-mode">Source only</span></div><div class="export-actions"><button class="button button-subtle" type="button" id="export-dossier" disabled>↓ Export dossier JSON</button><button class="button button-subtle" type="button" id="export-audit" disabled>↓ Export audit JSON</button><button class="button button-cyan" type="button" id="export-report" disabled>↓ Export investigation report (.md)</button><button class="button button-outline" type="button" id="print-report" disabled>▤ Print / Save PDF</button></div><p class="disclaimer">Dossier SHA-256 covers the dossier JSON, not its Markdown or printed representations. Exported reports are review copies, not digitally signed forensic evidence. This local prototype is not connected to production VoiceID. Only fabricated/anonymized synthetic metadata is permitted. No voice recordings, biometric templates, bank data, or real customer records.</p></div></section>
+<section class="wrap assurance-section" id="assurance-panel"><div class="panel"><div class="panel-head"><div><span class="overline">07 / ASSURANCE AND TAMPER CHECKS</span><h2>Show the guardrails working</h2><p class="muted">Reproducible offline checks and exported-file consistency verification — evidence of engineering controls, not certification.</p></div><span class="section-tag">NO API CREDITS</span></div>
+ <div class="assurance-grid"><section class="assurance-box" aria-labelledby="guardrail-title"><h3 id="guardrail-title">Safeguard challenge</h3><p class="muted">Exercise synthetic invalid cases, forged AI claims, and a changed dossier. No live Meta calls.</p>
+ <button class="button button-gold" id="run-assurance" type="button">◈ Run 14 local safeguards</button><p class="assurance-result" id="assurance-status" role="status" aria-live="polite">Not run in this browser session</p><div id="assurance-checks" class="assurance-checks"></div><p class="assurance-warning">Fixed, known test cases only. These checks do not prove complete prompt-injection resistance, security, or production readiness.</p></section>
+ <section class="assurance-box" aria-labelledby="verifier-title"><h3 id="verifier-title">Verify an exported investigation pair</h3><p class="muted">Select the dossier JSON and audit JSON previously exported from this workbench. Verification remains on your localhost computer.</p>
+ <label class="file-label" for="verify-dossier">Dossier JSON<input id="verify-dossier" type="file" accept=".json,application/json"></label>
+ <label class="file-label" for="verify-audit">Audit JSON<input id="verify-audit" type="file" accept=".json,application/json"></label>
+ <button class="button button-cyan" id="verify-pair" type="button">◎ Check SHA-256 consistency</button>
+ <p class="assurance-result" id="verification-status" role="status" aria-live="polite">Select both files to verify</p><div id="verification-checks" class="assurance-checks"></div>
+ <p class="assurance-warning">A matching pair is not a digital signature: an attacker could change both files and recompute hashes. Chain of custody requires separate controls.</p></section></div></div></section>
+</main>
+<footer class="footer"><div class="wrap footer-inner"><span>WEEGLONG AI™ · VOICEID SENTINEL · SYNTHETIC DEMONSTRATION</span><span>LOCAL HOST · NO PRODUCTION CONNECTIVITY · HUMAN REVIEW REQUIRED</span></div></footer>
+</body></html>

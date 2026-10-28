@@ -1,0 +1,16 @@
+{
+  "audit_schema_version": "1.0",
+  "generated_at_utc": "2026-10-27T20:48:24Z",
+  "case_id": "SENTINEL-STRUCT-DEMO-001",
+  "mode": "offline",
+  "input_canonical_sha256": "a21744d79d0598d8ed0a66bd194a15ae0785d8c9af2811b10bdff173ed087c1d",
+  "dossier_canonical_sha256": "5bf38f44fa10db91d7de6c0f687acd274e319db936b86be9d8a1f06a723a9731",
+  "sentinel_v1_2_source_sha256": "33649a0f64ad93b48668c3bca96fc96aa5b06761fcb2a712d09af91187233a63",
+  "legacy_validator_source_sha256": "2a8f6356b8f94861e9020417d477ab7a523ed98ffddecf794ab7334799d07190",
+  "policy_version": "sentinel-queue-1.2.0",
+  "event_count": 3,
+  "queue_count": 3,
+  "ai_advisory_present": false,
+  "human_review_required": true,
+  "note": "SHA-256 records integrity of files at creation; not a cryptographic signature or attestation."
+}

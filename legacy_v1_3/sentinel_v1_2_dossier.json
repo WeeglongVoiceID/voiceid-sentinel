@@ -1,0 +1,132 @@
+{
+  "schema_version": "1.2",
+  "case_id": "SENTINEL-STRUCT-DEMO-001",
+  "data_classification": "synthetic_demo_data",
+  "generation_mode": "offline",
+  "source_facts_authority": "supplied_case_metadata_only",
+  "policy_version": "sentinel-queue-1.2.0",
+  "event_facts": [
+    {
+      "event_id": "EVENT-DEMO-A",
+      "timestamp": "2026-10-20T09:14:00Z",
+      "channel": "web_demo",
+      "verification_result": "failed",
+      "replay_flag": true,
+      "liveness_result": "inconclusive",
+      "available_identifiers": {
+        "device_id": null,
+        "session_id": null,
+        "subject_ref": null
+      },
+      "source_evidence_refs": [
+        "EVENT-DEMO-A.timestamp",
+        "EVENT-DEMO-A.channel",
+        "EVENT-DEMO-A.verification_result",
+        "EVENT-DEMO-A.replay_flag",
+        "EVENT-DEMO-A.liveness_result"
+      ]
+    },
+    {
+      "event_id": "EVENT-DEMO-B",
+      "timestamp": "2026-10-20T09:19:00Z",
+      "channel": "web_demo",
+      "verification_result": "failed",
+      "replay_flag": false,
+      "liveness_result": "inconclusive",
+      "available_identifiers": {
+        "device_id": null,
+        "session_id": null,
+        "subject_ref": null
+      },
+      "source_evidence_refs": [
+        "EVENT-DEMO-B.timestamp",
+        "EVENT-DEMO-B.channel",
+        "EVENT-DEMO-B.verification_result",
+        "EVENT-DEMO-B.replay_flag",
+        "EVENT-DEMO-B.liveness_result"
+      ]
+    },
+    {
+      "event_id": "EVENT-DEMO-C",
+      "timestamp": "2026-10-20T09:26:00Z",
+      "channel": "web_demo",
+      "verification_result": "passed",
+      "replay_flag": false,
+      "liveness_result": "passed",
+      "available_identifiers": {
+        "device_id": null,
+        "session_id": null,
+        "subject_ref": null
+      },
+      "source_evidence_refs": [
+        "EVENT-DEMO-C.timestamp",
+        "EVENT-DEMO-C.channel",
+        "EVENT-DEMO-C.verification_result",
+        "EVENT-DEMO-C.replay_flag",
+        "EVENT-DEMO-C.liveness_result"
+      ]
+    }
+  ],
+  "shared_identifiers": [],
+  "linkage_caveat": "Only matching supplied identifier values are detectable; no shared actor, human identity or fraud is established.",
+  "investigation_queue": [
+    {
+      "review_priority": 2,
+      "title": "Human review of EVENT-DEMO-A",
+      "event_ids": [
+        "EVENT-DEMO-A"
+      ],
+      "rationale": "Replay detector flag; unverified signal.",
+      "evidence_refs": [
+        "EVENT-DEMO-A.replay_flag"
+      ],
+      "evidence_to_collect": [
+        "Detector trace and rule version",
+        "Liveness context"
+      ],
+      "safe_action": "Review source evidence manually; no automated adverse action."
+    },
+    {
+      "review_priority": 3,
+      "title": "Human review of EVENT-DEMO-B",
+      "event_ids": [
+        "EVENT-DEMO-B"
+      ],
+      "rationale": "Failed verification with failed or inconclusive liveness; requires contextual review.",
+      "evidence_refs": [
+        "EVENT-DEMO-B.verification_result",
+        "EVENT-DEMO-B.liveness_result"
+      ],
+      "evidence_to_collect": [
+        "Verification logs",
+        "Liveness quality metrics"
+      ],
+      "safe_action": "Review source evidence manually; no automated adverse action."
+    },
+    {
+      "review_priority": 5,
+      "title": "Human review of EVENT-DEMO-C",
+      "event_ids": [
+        "EVENT-DEMO-C"
+      ],
+      "rationale": "Routine source event; retain for historical context.",
+      "evidence_refs": [
+        "EVENT-DEMO-C.verification_result"
+      ],
+      "evidence_to_collect": [
+        "Relevant audit event if needed"
+      ],
+      "safe_action": "Review source evidence manually; no automated adverse action."
+    }
+  ],
+  "ai_advisory": null,
+  "model_metadata": null,
+  "human_review_required": true,
+  "automatic_adverse_action_allowed": false,
+  "limitations": [
+    "Local proof-of-concept; synthetic metadata only. Not integrated with production VoiceID.",
+    "Reference validation ensures field existence, not the semantic truth of all AI prose.",
+    "Equal supplied opaque identifiers do not establish who controlled an account or device.",
+    "Queue priorities are triage policy, not fraud probabilities or automatic decisions."
+  ]
+}
